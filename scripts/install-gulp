@@ -2,7 +2,7 @@
 
 
 apt-get update
-apt-get install -y unzip
+apt-get install -y unzip bzip2
 
 curl -L -o /tmp/frontool.zip https://github.com/SnowdogApps/magento2-frontools/archive/master.zip
 mkdir /gulp
@@ -23,13 +23,13 @@ npm install --save-dev gulp
 npm install jshint gulp-less gulp-concat gulp-uglify gulp-rename gulp-livereload gulp-sourcemaps gulp-util notify-send --save-dev
 npm install
 
-cat <<EOF > configs/browser-sync.json
+cat <<EOF > config/browser-sync.json
 {
   "proxy": "http://localhost"
 }
 EOF
 
-cat <<EOF > configs/themes.json
+cat <<EOF > config/themes.json
 {
   "backend": {
     "src": "/magento2/app/design/adminhtml/Magento/backend",
@@ -83,7 +83,8 @@ cat <<EOF > configs/themes.json
 EOF
 
 # Use 'magento', not '../bin/magento' as we installed this somewhere else.
-sed -i -e 's/..\/bin\/magento/magento/' /gulp/tasks/deploy.js 
+# /gulp/task/deploy.js not found. Content changed?
+# sed -i -e 's/..\/bin\/magento/magento/' /gulp/task/deploy.js 
 
 chown -R magento:magento .
 

@@ -1,7 +1,7 @@
 # This Dockerfile leveraged work by Mark Shust <mark.shust@mageinferno.com>
 # https://github.com/mageinferno/
 
-FROM php:7.0-apache
+FROM php:7.0.6-apache
 MAINTAINER Alan Kent <alan.james.kent@gmail.com>
 
 
@@ -24,7 +24,7 @@ RUN sh -x /scripts/install-php-extras
 # I check latest version number at https://hub.docker.com/_/mariadb/
 # (old versions are removed from site - only recent version is kept)
 ENV MARIADB_MAJOR 10.0
-ENV MARIADB_VERSION 10.0.25+maria-1~jessie
+ENV MARIADB_VERSION 10.0.31+maria-1~jessie
 
 RUN sh -x /scripts/install-mysql
 
